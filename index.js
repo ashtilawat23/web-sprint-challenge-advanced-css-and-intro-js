@@ -231,7 +231,7 @@ Create a function called `getArtistByIndex` that takes two arguments:
 */
 
 function getArtistByIndex(arry,idx){
-  return "The artist at index "+idx+" is "+arry[idx].name+"."
+  return "the artist at index "+idx+" is "+arry[idx].name
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -265,8 +265,13 @@ Create a function called `removeArtist` that takes two arguments:
  * it will remove Amedeo Modigliani from our dataset and log the number 19.  
 */
 function removeArtist(arry,idx){
-  let newarry = arry.slice(idx)
-  return newarry
+  let newarry = []
+  for(var j=0;j<arry.length;j++){
+    if(j!=idx){
+      newarry.push(arry[j])
+    }
+  }
+  return newarry.length
 }
    
 
@@ -288,6 +293,7 @@ At the end, this function should return the new array with information added"*/
 function addArtist(arry,id,name,years,genre,nationality,bio){
   let person = {id:id,name:name,years:years,genre:genre,nationality:nationality,bio:bio}
   arry.push(person)
+  return arry
 }
   
 
